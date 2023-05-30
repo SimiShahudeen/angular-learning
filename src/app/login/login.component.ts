@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OnSameUrlNavigation } from '@angular/router';
+import { ServiceAppDataService } from '../Services/service-app-data.service';
 
 @Component({
   selector: 'app-login',
@@ -7,18 +8,18 @@ import { OnSameUrlNavigation } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  uname: any
   data = "Your perfect banking partner"
-  constructor() { }
-  ngOnInit(): void { }
+  uname:any
+  psw:any
   placeholderData = "enter your password"
 
-  login() {
-    alert("login clicked")
-  }
-  unameChange(event: any) {
-    // console.log(event.target.value);
-    const uname = event.target.value
+  constructor(private ds:ServiceAppDataService) { }
+  ngOnInit(): void { }
 
+  login() {
+    // alert(this.uname)
+    // console.log(this.uname);
+    alert(`${this.ds.sdata} ${this.ds.checkData()}`)
+    
   }
 }

@@ -1,11 +1,11 @@
 
-<h3 class="text-white p-3">{{data}}</h3>
+<h3 class="text-white pt-4 text-center" >{{data}}</h3>
 
-<div class="container mt-5 w-50 text-center py-3" style="border-radius: 20px;background-color: slateblue; ">
-  <h1 class="text-white">Sign In</h1>
+<div class="container mt-5 w-50 text-center pb-3" style="border-radius: 20px;background-color: rgb(68, 51, 179); ">
+  <h1 class="text-white p-1">Sign In</h1>
   <form action="" class="form-control bg-light ">
-    <input type="text" (change)="unameChange($event)" class="form-control my-4" placeholder="enter your account number">
-    <input type="password" id="" class="form-control my-4" [placeholder]="placeholderData">
+    <input type="text" [(ngModel)]="uname" id="un1" name="acno" class="form-control my-4" placeholder="enter your account number">
+    <input type="password" [(ngModel)]="psw" id="psw" name="password" id="" class="form-control my-4" [placeholder]="placeholderData">
     <button type="button" (click)="login()" class="btn btn-info mb-2 ">login</button>
     <h6>don't have account?<a href="" style="text-decoration: none;"> create account</a></h6>
   </form>
